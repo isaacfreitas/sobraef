@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBRAEF | Institucional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS (Carrossel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS CSS (Animações) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        :root {
+            --verde-principal: #1B5E20;
+            --verde-hover: #144317;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .bg-verde-sobraef { background-color: var(--verde-principal); }
+        .text-verde-sobraef { color: var(--verde-principal); }
+        .border-verde-sobraef { border-color: var(--verde-principal); }
+    </style>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- NAVIGATION -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-verde-sobraef rounded-lg flex items-center justify-center text-white font-bold">S</div>
+                <span class="text-xl font-bold tracking-tight text-gray-900">SOBRAEF</span>
+            </div>
+            
+            <ul class="hidden lg:flex items-center gap-8 font-medium text-sm">
+                <li><a href="#inicio" class="hover:text-verde-sobraef transition">Início</a></li>
+                <li><a href="#institucional" class="hover:text-verde-sobraef transition">Institucional</a></li>
+                <li><a href="#publicacoes" class="hover:text-verde-sobraef transition">Publicações</a></li>
+                <li><a href="#eventos" class="hover:text-verde-sobraef transition">Eventos</a></li>
+                <li><a href="#filiacao" class="bg-verde-sobraef text-white px-5 py-2.5 rounded-full hover:bg-green-800 transition">Área do Membro</a></li>
+            </ul>
+
+            <button class="lg:hidden text-2xl" id="menuBtn">☰</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2" data-aos="fade-up">
+                <span class="text-verde-sobraef font-semibold tracking-widest uppercase text-sm">Bem-vindo à SOBRAEF</span>
+                <h1 class="text-4xl lg:text-6xl font-bold mt-4 mb-6 leading-tight">Excelência em Saúde e Atividade Física</h1>
+                <p class="text-gray-600 text-lg mb-8 max-w-lg">A entidade que representa a evolução científica e profissional da área no Brasil. Junte-se a nós.</p>
+                <div class="flex gap-4">
+                    <a href="#filiacao" class="bg-verde-sobraef text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-green-200 transition">Quero me filiar</a>
+                    <a href="#institucional" class="border border-gray-300 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition">Saiba mais</a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative" data-aos="zoom-in">
+                <div class="absolute -top-4 -left-4 w-64 h-64 bg-green-100 rounded-full filter blur-3xl opacity-70"></div>
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Profissional" class="rounded-3xl shadow-2xl relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICAÇÕES (SWIPER) -->
+    <section id="publicacoes" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold">Últimas Publicações</h2>
+                    <p class="text-gray-500">Notícias, artigos e editais atualizados.</p>
+                </div>
+                <div class="flex gap-2">
+                    <div class="swiper-button-prev-custom cursor-pointer p-2 bg-white rounded-full shadow hover:bg-green-50">⬅️</div>
+                    <div class="swiper-button-next-custom cursor-pointer p-2 bg-white rounded-full shadow hover:bg-green-50">➡️</div>
+                </div>
+            </div>
+
+            <div class="swiper pubSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                        <div class="h-48 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-verde-sobraef uppercase">Artigo Científico</span>
+                            <h3 class="font-bold text-xl mt-2">Impactos da Atividade Física na Melhor Idade</h3>
+                            <p class="text-gray-500 text-sm mt-3 line-clamp-2">Um estudo abrangente sobre os benefícios fisiológicos da prática constante...</p>
+                            <button class="mt-6 text-verde-sobraef font-semibold text-sm flex items-center gap-1">Ler mais ➔</button>
+                        </div>
+                    </div>
+                    <!-- Outros slides seguem o mesmo padrão -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE FILIAÇÃO (PRINCIPAL FEATURE) -->
+    <section id="filiacao" class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold">Solicitação de Filiação</h2>
+                <p class="text-gray-500 mt-2">Preencha os dados abaixo para iniciar seu processo de registro.</p>
+            </div>
+
+            <form id="formFiliacao" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Dados Pessoais -->
+                    <div class="md:col-span-2 flex items-center gap-2 border-b pb-2">
+                        <span class="bg-green-100 text-verde-sobraef w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                        <h3 class="font-bold">Dados Pessoais</h3>
+                    </div>
+                    
+                    <div class="flex flex-col gap-1">
+                        <label class="text-xs font-bold text-gray-500 uppercase">Nome Completo</label>
+                        <input type="text" required class="p-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <label class="text-xs font-bold text-gray-500 uppercase">CPF</label>
+                        <input type="text" id="cpf" placeholder="000.000.000-00" class="p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none">
+                    </div>
+
+                    <!-- Local de Trabalho -->
+                    <div class="md:col-span-2 flex items-center gap-2 border-b pb-2 mt-4">
+                        <span class="bg-green-100 text-verde-sobraef w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                        <h3 class="font-bold">Dados Profissionais</h3>
+                    </div>
+
+                    <div class="flex flex-col gap-1 md:col-span-2">
+                        <label class="text-xs font-bold text-gray-500 uppercase">Instituição de Trabalho</label>
+                        <input type="text" class="p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-1 md:col-span-2">
+                        <label class="text-xs font-bold text-gray-500 uppercase">Foto de Perfil</label>
+                        <input type="file" accept="image/*" class="p-2 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-verde-sobraef hover:file:bg-green-100">
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
+                    <input type="checkbox" required class="mt-1">
+                    <p class="text-xs text-blue-800 italic">Declaro que as informações acima são verdadeiras e aceito os termos de requerimento da SOBRAEF.</p>
+                </div>
+
+                <button type="submit" class="w-full bg-verde-sobraef text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-800 shadow-lg transition transform hover:-translate-y-1">
+                    Enviar Requerimento
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Simples -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto text-center border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-sm">© 2026 SOBRAEF - Sociedade Brasileira de Atividade Física e Saúde. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="script.js"></script>
+</body>
+</html>
