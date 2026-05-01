@@ -1,28 +1,55 @@
-/* Forçar alturas mínimas para evitar que o layout "suma" */
+/* RESET E FLUIDEZ */
+:root {
+    --verde-sobraef: #1B5E20;
+    --verde-secundario: #2D5A61;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+
+/* Forçar o Swiper a se comportar como um elemento flexível */
 .swiper {
     width: 100% !important;
-    display: block !important;
-    overflow: hidden !important;
+    height: 100% !important;
+    display: flex !important;
 }
 
 .swiper-slide {
-    height: auto !important;
+    height: auto !important; /* Permite que o slide cresça com o conteúdo */
     display: flex !important;
     flex-direction: column !important;
 }
 
-/* Evitar que os elementos flutuem ou estourem o container */
-main {
-    display: block !important;
-    clear: both !important;
+/* Correção de Inputs para Mobile */
+.label-clean { 
+    display: block; 
+    font-size: 10px; 
+    font-weight: 700; 
+    color: #475569; 
+    text-transform: uppercase; 
+    margin-bottom: 4px; 
 }
 
-section {
-    position: relative !important;
-    clear: both !important;
+.input-clean { 
+    width: 100%; 
+    padding: 12px 16px; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 12px; 
+    background: #f8fafc; 
+    font-size: 16px; /* Evita zoom no iPhone */
+    outline: none; 
 }
 
-/* Estilo do formulário injetado */
-.label-clean { display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 4px; }
-.input-clean { width: 100%; padding: 10px 14px; border: 1.5px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-size: 14px; outline: none; }
-.input-clean:focus { border-color: #15803d; background: #fff; }
+.input-clean:focus { 
+    border-color: var(--verde-sobraef); 
+    background: #fff; 
+}
+
+/* Modal Fullscreen no Mobile */
+@media (max-width: 768px) {
+    #modalFiliacao .relative {
+        border-radius: 0;
+    }
+}

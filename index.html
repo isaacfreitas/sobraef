@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SOBRAEF | Institucional</title>
+    <title>SOBRAEF | Sociedade Brasileira de Atividade Física e Saúde</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -11,68 +11,86 @@
 </head>
 <body class="bg-white text-slate-900 antialiased overflow-x-hidden">
 
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <header class="fixed w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center gap-2">
                 <img src="form/assets/LOGO-SOBRAEF.png" alt="Logo" class="h-10 w-auto">
-                <span class="font-bold text-green-900 uppercase text-sm md:text-base">SOBRAEF</span>
+                <span class="font-bold text-green-900 uppercase text-xs md:text-base">SOBRAEF</span>
             </a>
-            <button id="filiacaoBtn" class="bg-green-800 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md">Filie-se</button>
+            <button id="filiacaoBtn" class="bg-green-800 text-white px-5 py-2 rounded-full text-xs font-bold shadow-md hover:bg-green-900 transition">Filie-se</button>
         </nav>
     </header>
 
-    <main class="w-full">
+    <main class="w-full pt-20">
         <!-- HERO -->
-        <section class="pt-32 pb-12 px-4 container mx-auto flex flex-col items-center text-center">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">Excelência em <br><span class="text-green-800">Saúde Pública</span>.</h1>
-            <p class="text-slate-600 text-sm md:text-base max-w-md mb-8">Sociedade Brasileira de Atividade Física e Saúde: Ciência em prática nacional.</p>
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" class="rounded-3xl shadow-xl w-full max-w-sm border-4 border-white">
+        <section class="py-12 px-4 container mx-auto flex flex-col items-center text-center">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Excelência em <br><span class="text-green-800">Saúde Pública</span>.
+            </h1>
+            <p class="text-slate-600 text-sm md:text-lg max-w-2xl mb-10 leading-relaxed">
+                Sociedade Brasileira de Atividade Física e Saúde: transformando evidência científica em prática nacional para um Brasil mais ativo.
+            </p>
+            <div class="w-full max-w-lg px-4">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" class="rounded-[2.5rem] shadow-2xl border-4 border-white w-full h-auto" alt="Profissional de Saúde">
+            </div>
         </section>
 
-        <!-- ACESSOS RÁPIDOS + AVISOS (FIXED HEIGHT) -->
-        <section class="py-10 container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Links -->
-                <div class="w-full">
+        <!-- ACESSOS RÁPIDOS + AVISOS -->
+        <section class="py-8 container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Links (Flex-1) -->
+                <div class="w-full lg:w-1/3 flex flex-col">
                     <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl font-bold text-[10px] uppercase tracking-widest">Links de Acesso Rápido</div>
-                    <div class="bg-white border border-slate-100 rounded-b-2xl shadow-sm">
-                        <ul class="divide-y divide-slate-50 text-xs md:text-sm">
-                            <li class="p-4 flex justify-between font-semibold"><span>👤 Pessoa Física 2026</span> <span>➔</span></li>
-                            <li class="p-4 flex justify-between font-semibold"><span>🏢 Pessoa Jurídica 2026</span> <span>➔</span></li>
-                            <li class="p-4 flex justify-between font-semibold"><span>🔍 Pesquisa Profissional</span> <span>➔</span></li>
+                    <div class="bg-white border border-slate-100 rounded-b-2xl shadow-sm flex-grow">
+                        <ul class="divide-y divide-slate-50 text-sm">
+                            <li class="p-4 flex justify-between items-center font-semibold hover:bg-slate-50 cursor-pointer transition">
+                                <span>👤 Pessoa Física 2026</span> <span class="text-slate-300">➔</span>
+                            </li>
+                            <li class="p-4 flex justify-between items-center font-semibold hover:bg-slate-50 cursor-pointer transition">
+                                <span>🏢 Pessoa Jurídica 2026</span> <span class="text-slate-300">➔</span>
+                            </li>
+                            <li class="p-4 flex justify-between items-center font-semibold hover:bg-slate-50 cursor-pointer transition">
+                                <span>🔍 Pesquisa Profissional</span> <span class="text-slate-300">➔</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <!-- Banner Amarelo (Altura Fixa Garantida) -->
-                <div class="lg:col-span-2">
-                    <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl font-bold text-[10px] uppercase">Avisos Importantes</div>
-                    <div class="swiper mainSwiper h-[250px] md:h-[300px] rounded-b-2xl shadow-sm">
+
+                <!-- Banner Amarelo (Flex-2 com min-height responsivo) -->
+                <div class="w-full lg:w-2/3 flex flex-col">
+                    <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl font-bold text-[10px] uppercase tracking-widest">Avisos Importantes</div>
+                    <div class="swiper mainSwiper min-h-[280px] md:min-h-[350px] rounded-b-2xl shadow-sm bg-[#FFFF00]">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide bg-[#FFFF00] flex flex-col items-center justify-center p-6 text-center">
-                                <h2 class="text-[#008B45] text-xl md:text-3xl font-black italic uppercase leading-none mb-6">Portal da Transparência</h2>
-                                <button class="bg-[#008B45] text-white px-6 py-3 rounded-lg font-bold text-xs">ACESSE O PORTAL</button>
+                            <div class="swiper-slide flex flex-col items-center justify-center p-8 text-center">
+                                <h2 class="text-[#008B45] text-2xl md:text-5xl font-black italic uppercase leading-none mb-8">Portal da Transparência</h2>
+                                <button class="bg-[#008B45] text-white px-8 py-4 rounded-xl font-bold text-sm shadow-lg hover:bg-green-800 transition">ACESSE O PORTAL 👆</button>
                             </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- EVENTOS & INFORMATIVOS -->
-        <section class="py-12 bg-white">
+        <section class="py-16 bg-white overflow-hidden">
             <div class="container mx-auto px-4 flex flex-col items-center">
-                <div class="text-center mb-10">
-                    <span class="text-5xl block mb-2">📢</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-slate-200 uppercase leading-none tracking-tighter" style="text-shadow: 1px 1px 0 #e2e8f0, -1px -1px 0 #e2e8f0;">Eventos & Informativos</h2>
+                <div class="text-center mb-12">
+                    <span class="text-5xl block mb-4">📢</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-100 uppercase leading-none tracking-tighter" style="text-shadow: 1px 1px 0 #e2e8f0, -1px -1px 0 #e2e8f0;">Eventos & Informativos</h2>
                 </div>
-                <div class="w-full max-w-md">
-                    <div class="swiper infoSwiper py-4">
+                <div class="w-full max-w-[450px] px-2">
+                    <div class="swiper infoSwiper py-6">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide bg-white p-8 rounded-[2rem] shadow-2xl border-b-[6px] border-[#2D5A61]">
-                                <p class="text-center italic text-[#C5A059] font-serif text-xl mb-4">Comunicado</p>
-                                <p class="text-sm text-slate-600 text-center mb-6 leading-relaxed">Não haverá expediente durante o feriado nacional de Tiradentes.</p>
-                                <div class="bg-[#2D5A61] text-white text-[10px] font-bold py-3 rounded-xl text-center uppercase mb-4">SOBRAEF DE TODOS</div>
-                                <span class="bg-slate-100 text-slate-500 text-[10px] px-3 py-1 rounded-full font-bold">19/04/2026</span>
+                            <div class="swiper-slide bg-white p-8 rounded-[2.5rem] shadow-2xl border-b-[8px] border-[#2D5A61] flex flex-col h-full">
+                                <p class="text-center italic text-[#C5A059] font-serif text-2xl mb-6">Comunicado</p>
+                                <p class="text-base text-slate-600 text-center mb-8 leading-relaxed flex-grow">
+                                    Informamos que não haverá expediente administrativo durante o feriado nacional de Tiradentes, retornando às atividades normais no dia seguinte.
+                                </p>
+                                <div class="bg-[#2D5A61] text-white text-[11px] font-bold py-4 rounded-xl text-center uppercase tracking-widest mb-6">SOBRAEF DE TODOS</div>
+                                <div class="flex justify-center">
+                                    <span class="bg-slate-100 text-slate-500 text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-tighter">19/04/2026</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,17 +99,19 @@
         </section>
     </main>
 
-    <!-- FOOTER FIX -->
-    <footer class="bg-slate-900 text-white py-10 text-center mt-12">
-        <p class="text-xs text-slate-500">© 2026 SOBRAEF - Sociedade Brasileira de Atividade Física e Saúde.</p>
+    <footer class="bg-slate-900 text-white py-12 text-center">
+        <div class="container mx-auto px-4 opacity-50">
+            <p class="text-[10px] uppercase tracking-widest mb-2 font-bold">SOBRAEF Institucional</p>
+            <p class="text-xs">© 2026 Sociedade Brasileira de Atividade Física e Saúde. <br> Fortaleza, Ceará, Brasil.</p>
+        </div>
     </footer>
 
     <!-- MODAL -->
-    <div id="modalFiliacao" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-sm"></div>
-        <div class="relative bg-white w-full max-w-5xl h-[90vh] rounded-[2rem] overflow-y-auto shadow-2xl">
-            <button id="closeModal" class="absolute top-4 right-4 z-50 bg-slate-100 w-10 h-10 rounded-full font-bold">✕</button>
-            <div id="modalContent"></div>
+    <div id="modalFiliacao" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md"></div>
+        <div class="relative bg-white w-full h-full md:h-auto md:max-h-[92vh] md:max-w-5xl md:rounded-[3rem] overflow-y-auto shadow-2xl transition-all">
+            <button id="closeModal" class="absolute top-6 right-6 z-50 bg-white/80 w-12 h-12 rounded-full font-bold shadow-sm">✕</button>
+            <div id="modalContent" class="p-0"></div>
         </div>
     </div>
 
