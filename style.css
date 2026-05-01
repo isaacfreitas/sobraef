@@ -1,4 +1,4 @@
-/* --- RESET E FLUIDEZ --- */
+/* RESET */
 :root {
     --verde-sobraef: #1B5E20;
     --verde-secundario: #2D5A61;
@@ -6,81 +6,61 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
 }
 
-/* Ajuste de containers para nunca estourarem a largura */
+/* Garante que o container ocupe 100% da largura disponível sem transbordar */
 .container {
     width: 100% !important;
     max-width: 1280px !important;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-/* --- CARROSSEL RESPONSIVO --- */
+/* FIX SWIPER ALIGNMENT */
 .swiper {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-.swiper-pagination-bullet-active {
-    background: #008B45 !important;
-    width: 20px !important;
-    border-radius: 4px !important;
-}
-
-/* --- MODAL MOBILE-FIRST --- */
-#modalContent {
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Forçar o conteúdo injetado do /form a ser responsivo */
-#modalContent section, 
-#modalContent .container {
-    padding: 1rem !important;
+.infoSwiper .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     width: 100% !important;
 }
 
-#modalContent form {
+/* Estilização Premium para o Card */
+.infoSwiper .swiper-slide > div {
     width: 100% !important;
-    display: block !important;
+    max-width: 100% !important;
 }
 
-/* --- INPUTS REVISADOS --- */
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+    .infoSwiper {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* FORÇAR INPUTS DO FORMULÁRIO INJETADO */
 .label-clean {
-    font-size: 0.7rem;
+    display: block;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #475569;
     text-transform: uppercase;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .input-clean {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background-color: #f8fafc;
+    width: 100% !important;
+    padding: 0.8rem 1rem;
     border: 1.5px solid #e2e8f0;
     border-radius: 0.75rem;
-    font-size: 16px; /* Evita zoom automático no iOS */
-    outline: none;
-    transition: all 0.2s;
-}
-
-.input-clean:focus {
-    border-color: var(--verde-sobraef);
-    background-color: #fff;
-}
-
-/* Grid Mobile Fix */
-.grid-cols-2 {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-@media (min-width: 768px) {
-    .grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    background: #f8fafc;
+    font-size: 16px; /* Evita zoom no iOS */
 }
