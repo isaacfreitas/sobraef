@@ -1,61 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Inicialização do Swiper com observadores dinâmicos
-    const swiperOptions = {
-        loop: false,
-        observer: true,
-        observeParents: true,
-        watchOverflow: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        }
+    // 1. AOS Animações
+    AOS.init({ duration: 800, once: true });
+
+    // 2. Carrosséis com configurações de redundância (Evita sumir no mobile)
+    const initSwipers = () => {
+        new Swiper('.mainSwiper', {
+            loop: true,
+            autoplay: { delay: 5000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            observer: true,
+            observeParents: true
+        });
+
+        new Swiper('.infoSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2.5 }
+            },
+            observer: true,
+            observeParents: true
+        });
     };
 
-    const mainSwiper = new Swiper('.mainSwiper', { ...swiperOptions, autoplay: { delay: 5000 } });
-    const infoSwiper = new Swiper('.infoSwiper', { ...swiperOptions, spaceBetween: 20 });
+    initSwipers();
 
-    // Lógica do Modal
+    // 3. Lógica do Modal de Filiação
     const modal = document.getElementById('modalFiliacao');
     const modalContent = document.getElementById('modalContent');
-    const triggers = document.querySelectorAll('#filiacaoBtn, a[href="#filiacao"]');
+    const closeModal = document.getElementById('closeModal');
+    const triggers = document.querySelectorAll('a[href="#filiacao"]');
 
-    const openModal = async (e) => {
+    const openFiliacao = async (e) => {
         if(e) e.preventDefault();
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        modalContent.innerHTML = '<div class="p-20 text-center font-bold text-slate-300 uppercase tracking-widest animate-pulse">Carregando formulário...</div>';
+        
+        modalContent.innerHTML = `<div class="p-20 text-center flex flex-col items-center justify-center">
+            <div class="animate-spin h-10 w-10 border-4 border-green-800 border-t-transparent rounded-full mb-4"></div>
+            <p class="text-gray-400 font-bold uppercase text-xs">Carregando formulário...</p>
+        </div>`;
 
         try {
-            const resp = await fetch('form/index.html');
-            const html = await resp.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const response = await fetch('form/index.html');
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
             const content = doc.getElementById('filiacao');
-            
-            if(content) {
+
+            if (content) {
                 modalContent.innerHTML = content.innerHTML;
-                // Re-inicializa máscaras no formulário injetado
                 const cpf = modalContent.querySelector('#cpf');
+                const tel = modalContent.querySelector('#tel');
                 if(cpf) IMask(cpf, { mask: '000.000.000-00' });
-                
-                // Forçar o navegador a entender o novo conteúdo para scroll
-                modalContent.scrollTo(0,0);
+                if(tel) IMask(tel, { mask: '(00) 00000-0000' });
             }
-        } catch (err) {
-            modalContent.innerHTML = '<div class="p-10 text-red-500 font-bold">Erro ao carregar pasta /form/index.html</div>';
+        } catch (error) {
+            modalContent.innerHTML = '<div class="p-10 text-center text-red-500">Erro ao carregar pasta /form.</div>';
         }
     };
 
-    triggers.forEach(t => t.addEventListener('click', openModal));
-    
-    document.getElementById('closeModal').onclick = () => {
+    triggers.forEach(trigger => trigger.addEventListener('click', openFiliacao));
+    closeModal.onclick = () => {
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     };
-
-    // Ajuste de Redesenho (Anti-Quebra)
-    window.addEventListener('resize', () => {
-        mainSwiper.update();
-        infoSwiper.update();
-    });
 });
