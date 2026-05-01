@@ -1,0 +1,43 @@
+/* Classes Utilitárias para o Formulário */
+.label-clean {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.input-clean {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-clean:focus {
+    background-color: #fff;
+    border-color: #15803d;
+    box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.1);
+}
+
+.group:focus-within .label-clean {
+    color: #15803d;
+}
+
+/* Identidade Visual */
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}

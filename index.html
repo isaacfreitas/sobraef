@@ -3,160 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOBRAEF | Institucional</title>
-    <!-- Tailwind CSS -->
+    <title>SOBRAEF | Sociedade Brasileira de Atividade Física e Saúde</title>
+    <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Swiper CSS (Carrossel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Bibliotecas Externas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- AOS CSS (Animações) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <style>
-        :root {
-            --verde-principal: #1B5E20;
-            --verde-hover: #144317;
-        }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
-        .bg-verde-sobraef { background-color: var(--verde-principal); }
-        .text-verde-sobraef { color: var(--verde-principal); }
-        .border-verde-sobraef { border-color: var(--verde-principal); }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800 overflow-x-hidden">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
-    <!-- NAVIGATION -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <!-- HEADER -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-verde-sobraef rounded-lg flex items-center justify-center text-white font-bold">S</div>
-                <span class="text-xl font-bold tracking-tight text-gray-900">SOBRAEF</span>
-            </div>
+            <a href="#" class="flex items-center gap-3">
+                <img src="form/assets/LOGO-SOBRAEF.png" alt="SOBRAEF" class="h-12 w-auto">
+                <div class="leading-none hidden sm:block border-l pl-3 border-slate-200">
+                    <span class="block font-extrabold text-lg text-green-900 tracking-tighter">SOBRAEF</span>
+                    <span class="text-[10px] text-slate-400 uppercase font-semibold">Ciência em Movimento</span>
+                </div>
+            </a>
             
-            <ul class="hidden lg:flex items-center gap-8 font-medium text-sm">
-                <li><a href="#inicio" class="hover:text-verde-sobraef transition">Início</a></li>
-                <li><a href="#institucional" class="hover:text-verde-sobraef transition">Institucional</a></li>
-                <li><a href="#publicacoes" class="hover:text-verde-sobraef transition">Publicações</a></li>
-                <li><a href="#eventos" class="hover:text-verde-sobraef transition">Eventos</a></li>
-                <li><a href="#filiacao" class="bg-verde-sobraef text-white px-5 py-2.5 rounded-full hover:bg-green-800 transition">Área do Membro</a></li>
+            <ul class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <li><a href="#inicio" class="hover:text-green-800 transition">Início</a></li>
+                <li><a href="#avisos" class="hover:text-green-800 transition">Transparência</a></li>
+                <li><a href="#eventos" class="hover:text-green-800 transition">Informativos</a></li>
+                <li><a href="#filiacao" class="bg-green-800 text-white px-7 py-2.5 rounded-full hover:bg-green-900 shadow-lg shadow-green-100 transition transform hover:scale-105">Área do Membro</a></li>
             </ul>
 
-            <button class="lg:hidden text-2xl" id="menuBtn">☰</button>
+            <button class="lg:hidden text-2xl">☰</button>
         </nav>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="inicio" class="pt-32 pb-20 px-6">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <section id="inicio" class="pt-40 pb-16 px-6 bg-gradient-to-b from-green-50/50 to-white">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div class="lg:w-1/2" data-aos="fade-up">
-                <span class="text-verde-sobraef font-semibold tracking-widest uppercase text-sm">Bem-vindo à SOBRAEF</span>
-                <h1 class="text-4xl lg:text-6xl font-bold mt-4 mb-6 leading-tight">Excelência em Saúde e Atividade Física</h1>
-                <p class="text-gray-600 text-lg mb-8 max-w-lg">A entidade que representa a evolução científica e profissional da área no Brasil. Junte-se a nós.</p>
-                <div class="flex gap-4">
-                    <a href="#filiacao" class="bg-verde-sobraef text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-green-200 transition">Quero me filiar</a>
-                    <a href="#institucional" class="border border-gray-300 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition">Saiba mais</a>
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-slate-900">
+                    Excelência em <br><span class="text-green-800">Saúde Pública</span>.
+                </h1>
+                <p class="text-slate-600 text-lg mb-10 max-w-lg leading-relaxed font-medium">
+                    A Sociedade Brasileira de Atividade Física e Saúde atua na vanguarda da pesquisa e na formação de políticas para um Brasil mais ativo.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#filiacao" class="bg-green-800 text-white px-10 py-4 rounded-2xl font-bold shadow-xl hover:bg-green-900 transition transform hover:-translate-y-1">Seja um Membro</a>
+                    <a href="#eventos" class="bg-white border border-slate-200 px-10 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">Ver Comunicados</a>
                 </div>
             </div>
             <div class="lg:w-1/2 relative" data-aos="zoom-in">
-                <div class="absolute -top-4 -left-4 w-64 h-64 bg-green-100 rounded-full filter blur-3xl opacity-70"></div>
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Profissional" class="rounded-3xl shadow-2xl relative z-10">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-green-200 rounded-full blur-3xl opacity-30"></div>
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Profissional AF" class="rounded-[3rem] shadow-2xl border-8 border-white relative z-10">
             </div>
         </div>
     </section>
 
-    <!-- PUBLICAÇÕES (SWIPER) -->
-    <section id="publicacoes" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold">Últimas Publicações</h2>
-                    <p class="text-gray-500">Notícias, artigos e editais atualizados.</p>
+    <!-- SEÇÃO: LINKS RÁPIDOS & AVISOS (ESTILO CREF5) -->
+    <section id="avisos" class="py-12 container mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Coluna 1: Links Rápidos -->
+            <div class="lg:col-span-1" data-aos="fade-right">
+                <div class="bg-[#2D5A61] text-white p-5 rounded-t-2xl flex items-center gap-3">
+                    <span class="text-xl">🔗</span>
+                    <h3 class="font-bold uppercase text-xs tracking-widest">Links de Acesso Rápido</h3>
                 </div>
-                <div class="flex gap-2">
-                    <div class="swiper-button-prev-custom cursor-pointer p-2 bg-white rounded-full shadow hover:bg-green-50">⬅️</div>
-                    <div class="swiper-button-next-custom cursor-pointer p-2 bg-white rounded-full shadow hover:bg-green-50">➡️</div>
+                <div class="bg-white border-x border-b border-slate-100 rounded-b-2xl shadow-sm overflow-hidden">
+                    <ul class="divide-y divide-slate-50">
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">👤 Pessoa Física Anuidade 2026</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">🏢 Pessoa Jurídica Anuidade 2026</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">🔍 Pesquisa de Profissionais</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">📢 Denuncie à SOBRAEF</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">📝 Formulários Oficiais</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                        <li class="p-4 hover:bg-slate-50 flex items-center justify-between text-sm font-semibold text-slate-700 cursor-pointer group">
+                            <span class="flex items-center gap-3">💎 Clube de Vantagens</span>
+                            <span class="text-slate-300 group-hover:text-green-700 transition">➔</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="swiper pubSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Card 1 -->
-                    <div class="swiper-slide bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-                        <div class="h-48 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=500&q=80')"></div>
-                        <div class="p-6">
-                            <span class="text-xs font-bold text-verde-sobraef uppercase">Artigo Científico</span>
-                            <h3 class="font-bold text-xl mt-2">Impactos da Atividade Física na Melhor Idade</h3>
-                            <p class="text-gray-500 text-sm mt-3 line-clamp-2">Um estudo abrangente sobre os benefícios fisiológicos da prática constante...</p>
-                            <button class="mt-6 text-verde-sobraef font-semibold text-sm flex items-center gap-1">Ler mais ➔</button>
+            <!-- Coluna 2 e 3: Carrossel -->
+            <div class="lg:col-span-2" data-aos="fade-left">
+                <div class="bg-[#2D5A61] text-white p-5 rounded-t-2xl flex items-center gap-3">
+                    <span class="text-xl">⚠️</span>
+                    <h3 class="font-bold uppercase text-xs tracking-widest">Avisos Importantes</h3>
+                </div>
+                <div class="swiper mainSwiper rounded-b-2xl shadow-sm h-full min-h-[380px]">
+                    <div class="swiper-wrapper">
+                        <!-- Slide Transparência -->
+                        <div class="swiper-slide bg-[#FFFF00] flex flex-col items-center justify-center p-10 text-center relative overflow-hidden">
+                            <h2 class="text-[#008B45] text-4xl md:text-5xl font-black italic uppercase leading-tight mb-8 z-10">
+                                Portal da Transparência <br> e Acesso à Informação
+                            </h2>
+                            <button class="bg-[#008B45] text-white px-10 py-4 rounded-xl font-extrabold text-lg flex items-center gap-3 hover:bg-green-800 transition shadow-lg z-10">
+                                ACESSE O PORTAL 👆
+                            </button>
+                            <span class="absolute bottom-[-20px] right-5 text-black/5 text-[180px] font-bold">ℹ️</span>
+                        </div>
+                        <!-- Slide Anuidade -->
+                        <div class="swiper-slide bg-green-900 flex flex-col items-center justify-center p-10 text-white text-center">
+                            <h2 class="text-3xl font-bold mb-4">Anuidade 2026: Descontos Progressivos</h2>
+                            <p class="mb-6 opacity-80">Acesse o seu portal do membro e confira as condições especiais de pagamento antecipado.</p>
+                            <button class="bg-white text-green-900 px-8 py-3 rounded-lg font-bold">Ver Tabela de Valores</button>
                         </div>
                     </div>
-                    <!-- Outros slides seguem o mesmo padrão -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FORMULÁRIO DE FILIAÇÃO (PRINCIPAL FEATURE) -->
-    <section id="filiacao" class="py-20">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold">Solicitação de Filiação</h2>
-                <p class="text-gray-500 mt-2">Preencha os dados abaixo para iniciar seu processo de registro.</p>
+    <!-- SEÇÃO: EVENTOS & INFORMATIVOS -->
+    <section id="eventos" class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+            <!-- Sidebar Título -->
+            <div class="lg:w-1/4 text-center lg:text-left">
+                <div class="text-red-600 text-7xl mb-6" data-aos="zoom-in">📢</div>
+                <h2 class="text-5xl font-black text-slate-100 uppercase leading-[0.9] tracking-tighter" style="text-shadow: 1px 1px 0 #e2e8f0, -1px -1px 0 #e2e8f0;">
+                    Eventos <br> & <br> Informativos
+                </h2>
             </div>
 
-            <form id="formFiliacao" class="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Dados Pessoais -->
-                    <div class="md:col-span-2 flex items-center gap-2 border-b pb-2">
-                        <span class="bg-green-100 text-verde-sobraef w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                        <h3 class="font-bold">Dados Pessoais</h3>
-                    </div>
-                    
-                    <div class="flex flex-col gap-1">
-                        <label class="text-xs font-bold text-gray-500 uppercase">Nome Completo</label>
-                        <input type="text" required class="p-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 outline-none">
-                    </div>
-
-                    <div class="flex flex-col gap-1">
-                        <label class="text-xs font-bold text-gray-500 uppercase">CPF</label>
-                        <input type="text" id="cpf" placeholder="000.000.000-00" class="p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none">
-                    </div>
-
-                    <!-- Local de Trabalho -->
-                    <div class="md:col-span-2 flex items-center gap-2 border-b pb-2 mt-4">
-                        <span class="bg-green-100 text-verde-sobraef w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                        <h3 class="font-bold">Dados Profissionais</h3>
-                    </div>
-
-                    <div class="flex flex-col gap-1 md:col-span-2">
-                        <label class="text-xs font-bold text-gray-500 uppercase">Instituição de Trabalho</label>
-                        <input type="text" class="p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none">
-                    </div>
-
-                    <div class="flex flex-col gap-1 md:col-span-2">
-                        <label class="text-xs font-bold text-gray-500 uppercase">Foto de Perfil</label>
-                        <input type="file" accept="image/*" class="p-2 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-verde-sobraef hover:file:bg-green-100">
+            <!-- Carrossel Informativos -->
+            <div class="lg:w-3/4" data-aos="fade-up">
+                <div class="swiper infoSwiper p-4">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-xl border-b-[6px] border-[#2D5A61]">
+                            <div class="text-center mb-6">
+                                <span class="text-[#C5A059] font-serif italic text-2xl">Comunicado</span>
+                            </div>
+                            <p class="text-sm text-slate-600 italic text-center leading-relaxed mb-8">
+                                A SOBRAEF comunica que não haverá expediente em virtude do feriado nacional de Tiradentes, retornando no dia útil seguinte.
+                            </p>
+                            <div class="bg-[#2D5A61] text-white text-[10px] font-bold py-2.5 rounded-lg text-center uppercase tracking-widest mb-6">
+                                UMA ENTIDADE DE TODOS
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-sm mb-2 uppercase">Comunicado sobre o Feriado ✅</h4>
+                            <span class="bg-slate-100 text-slate-500 text-[10px] px-3 py-1.5 rounded-full font-bold">19/04/2026</span>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-xl border-b-[6px] border-green-800">
+                            <div class="text-center mb-6">
+                                <span class="text-[#C5A059] font-serif italic text-2xl">Evento</span>
+                            </div>
+                            <p class="text-sm text-slate-600 italic text-center leading-relaxed mb-8">
+                                Estão abertas as inscrições para o Simpósio Sul-Brasileiro de Atividade Física e Saúde. Participe!
+                            </p>
+                            <div class="bg-green-800 text-white text-[10px] font-bold py-2.5 rounded-lg text-center uppercase tracking-widest mb-6">
+                                PESQUISA E CIÊNCIA
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-sm mb-2 uppercase">Inscrições Abertas ✅</h4>
+                            <span class="bg-slate-100 text-slate-500 text-[10px] px-3 py-1.5 rounded-full font-bold">10/05/2026</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
-                    <input type="checkbox" required class="mt-1">
-                    <p class="text-xs text-blue-800 italic">Declaro que as informações acima são verdadeiras e aceito os termos de requerimento da SOBRAEF.</p>
-                </div>
-
-                <button type="submit" class="w-full bg-verde-sobraef text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-800 shadow-lg transition transform hover:-translate-y-1">
-                    Enviar Requerimento
-                </button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Simples -->
-    <footer class="bg-gray-900 text-white py-12 px-6">
-        <div class="container mx-auto text-center border-t border-gray-800 pt-8">
-            <p class="text-gray-500 text-sm">© 2026 SOBRAEF - Sociedade Brasileira de Atividade Física e Saúde. Todos os direitos reservados.</p>
+    <!-- MODAL DE FILIAÇÃO (Injetado) -->
+    <div id="modalFiliacao" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-md"></div>
+        <div class="relative w-full h-full flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-[3rem] relative shadow-2xl">
+                <button id="closeModal" class="absolute top-8 right-8 z-20 bg-slate-100 hover:bg-red-50 hover:text-red-600 w-12 h-12 rounded-full transition-all flex items-center justify-center font-bold">✕</button>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <img src="form/assets/LOGO-SOBRAEF.png" alt="Logo" class="h-10 mx-auto mb-6 brightness-0 invert opacity-50">
+            <p class="text-slate-500 text-sm">© 2026 SOBRAEF - Sociedade Brasileira de Atividade Física e Saúde. <br> Fortaleza, Ceará, Brasil.</p>
         </div>
     </footer>
 

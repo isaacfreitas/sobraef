@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBRAEF | Sociedade Brasileira de Atividade Física e Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50">
+
+    <!-- HEADER INSTITUCIONAL -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-4">
+                <img src="assets/LOGO-SOBRAEF.png" alt="SOBRAEF Logo" class="h-14 w-auto object-contain">
+                <div class="hidden md:block border-l pl-4 border-gray-200">
+                    <span class="block text-xs font-bold text-green-800 uppercase tracking-widest">Sociedade Brasileira</span>
+                    <span class="block text-xs text-gray-500 uppercase tracking-tighter">de Atividade Física e Saúde</span>
+                </div>
+            </a>
+            
+            <ul class="hidden lg:flex gap-6 text-sm font-medium text-gray-600">
+                <li><a href="#institucional" class="hover:text-green-700 transition">Institucional</a></li>
+                <li><a href="#publicacoes" class="hover:text-green-700 transition">Publicações</a></li>
+                <li><a href="#eventos" class="hover:text-green-700 transition">Eventos</a></li>
+                <li><a href="#filiacao" class="bg-green-800 text-white px-5 py-2 rounded-lg hover:bg-green-900 transition">Área do Membro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO DE FILIAÇÃO (O CORAÇÃO DA POC) -->
+    <section id="filiacao" class="py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                
+                <!-- Sidebar Lateral Informativa -->
+                <div class="md:w-1/3 bg-green-900 p-10 text-white">
+                    <h2 class="text-2xl font-bold mb-6">Torne-se um Membro</h2>
+                    <p class="text-green-100 text-sm leading-relaxed mb-8">
+                        Ao se filiar à SOBRAEF, você passa a integrar uma rede nacional de excelência científica, garantindo acesso a publicações exclusivas e descontos em eventos oficiais.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3"><span class="opacity-50">✓</span> Certificado Digital</li>
+                        <li class="flex items-center gap-3"><span class="opacity-50">✓</span> Acesso a Periódicos</li>
+                        <li class="flex items-center gap-3"><span class="opacity-50">✓</span> Networking Profissional</li>
+                    </ul>
+                </div>
+
+                <!-- Formulário Completo -->
+                <div class="md:w-2/3 p-10">
+                    <form id="formCadastro" class="space-y-8">
+                        
+                        <!-- 1. Dados Pessoais -->
+                        <div>
+                            <h3 class="text-gray-900 font-bold border-b pb-2 mb-6 flex items-center gap-2">
+                                <span class="w-2 h-6 bg-green-600 rounded-full"></span> Dados Pessoais
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="md:col-span-2 group">
+                                    <label class="label-clean">Nome Completo</label>
+                                    <input type="text" placeholder="Como consta no RG" class="input-clean" required>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">Data de Nascimento</label>
+                                    <input type="date" class="input-clean" required>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">Sexo</label>
+                                    <select class="input-clean">
+                                        <option value="">Selecione...</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="O">Outro</option>
+                                    </select>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">CPF</label>
+                                    <input type="text" id="cpf" placeholder="000.000.000-00" class="input-clean" required>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">RG</label>
+                                    <input type="text" placeholder="Número do documento" class="input-clean" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Contato e Localização -->
+                        <div>
+                            <h3 class="text-gray-900 font-bold border-b pb-2 mb-6 flex items-center gap-2">
+                                <span class="w-2 h-6 bg-green-600 rounded-full"></span> Contato e Endereço
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="group">
+                                    <label class="label-clean">E-mail</label>
+                                    <input type="email" placeholder="seu@email.com" class="input-clean" required>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">Telefone</label>
+                                    <input type="text" id="tel" placeholder="(00) 00000-0000" class="input-clean" required>
+                                </div>
+                                <div class="md:col-span-2 group">
+                                    <label class="label-clean">Endereço Residencial Completo</label>
+                                    <input type="text" placeholder="Rua, Número, Bairro, Cidade - UF" class="input-clean" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Acadêmico e Profissional -->
+                        <div>
+                            <h3 class="text-gray-900 font-bold border-b pb-2 mb-6 flex items-center gap-2">
+                                <span class="w-2 h-6 bg-green-600 rounded-full"></span> Formação e Atuação
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="group">
+                                    <label class="label-clean">Nível de Formação</label>
+                                    <select class="input-clean" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="cursando">Cursando (Graduação)</option>
+                                        <option value="formado">Graduado / Formado</option>
+                                        <option value="pos">Pós-graduado (Especialista)</option>
+                                        <option value="mestrado">Mestre / Doutor</option>
+                                    </select>
+                                </div>
+                                <div class="group">
+                                    <label class="label-clean">Foto de Perfil (3x4)</label>
+                                    <input type="file" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-green-50 file:text-green-700">
+                                </div>
+                                <div class="md:col-span-2 bg-gray-50 p-4 rounded-xl border border-dashed border-gray-300">
+                                    <p class="text-[10px] font-bold text-gray-400 uppercase mb-3">Local de Trabalho Atual</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <input type="text" placeholder="Nome da Instituição" class="input-clean bg-white">
+                                        <input type="text" placeholder="Endereço Comercial" class="input-clean bg-white">
+                                        <input type="text" placeholder="Estado (UF)" class="input-clean bg-white">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Termos -->
+                        <div class="space-y-3 pt-4">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" required class="w-5 h-5 rounded border-gray-300 text-green-700 focus:ring-green-600">
+                                <span class="text-xs text-gray-600 group-hover:text-gray-900 transition">Declaro que as informações acima são verídicas.</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" required class="w-5 h-5 rounded border-gray-300 text-green-700 focus:ring-green-600">
+                                <span class="text-xs text-gray-600 group-hover:text-gray-900 transition">Aceito o termo de requerimento de filiação SOBRAEF.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-700 text-white py-4 rounded-xl font-bold hover:bg-green-800 transition-all shadow-lg hover:shadow-green-100 flex justify-center items-center gap-2">
+                            Finalizar Cadastro de Membro
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/imask"></script>
+    <script src="script.js"></script>
+</body>
+</html>
