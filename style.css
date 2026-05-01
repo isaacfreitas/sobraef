@@ -1,54 +1,28 @@
-:root {
-    --verde-sobraef: #1B5E20;
-    --verde-secundario: #2D5A61;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-.container {
-    width: 100% !important;
-    max-width: 1280px !important;
-    margin: 0 auto;
-}
-
-/* Forçar Visibilidade do Carrossel */
+/* Forçar alturas mínimas para evitar que o layout "suma" */
 .swiper {
     width: 100% !important;
-    height: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: block !important;
+    overflow: hidden !important;
 }
 
-.swiper-wrapper {
+.swiper-slide {
     height: auto !important;
-}
-
-.infoSwiper .swiper-slide {
     display: flex !important;
-    justify-content: center !important;
-    padding: 10px;
+    flex-direction: column !important;
 }
 
-/* Estilos do Formulário Injetado */
-.label-clean {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #475569;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
+/* Evitar que os elementos flutuem ou estourem o container */
+main {
+    display: block !important;
+    clear: both !important;
 }
 
-.input-clean {
-    width: 100% !important;
-    padding: 0.8rem 1rem;
-    background-color: #f8fafc;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 0.75rem;
-    font-size: 16px;
-    outline: none;
+section {
+    position: relative !important;
+    clear: both !important;
 }
+
+/* Estilo do formulário injetado */
+.label-clean { display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 4px; }
+.input-clean { width: 100%; padding: 10px 14px; border: 1.5px solid #e2e8f0; border-radius: 12px; background: #f8fafc; font-size: 14px; outline: none; }
+.input-clean:focus { border-color: #15803d; background: #fff; }
