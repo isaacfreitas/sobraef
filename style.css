@@ -1,67 +1,53 @@
-/* RESET & FONTS */
 :root {
     --verde-sobraef: #1B5E20;
     --verde-secundario: #2D5A61;
 }
 
-body { font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
-h1, h2, h3 { font-family: 'Poppins', sans-serif; }
-
-/* --- CARROSSEL NATIVO (IMPOSSÍVEL DE SUMIR) --- */
-.carousel-container {
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-    display: flex;
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-.carousel-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
 }
 
-.carousel-track {
-    display: flex;
-    width: 100%;
+.swiper {
+    width: 100% !important;
 }
 
-.carousel-slide {
-    min-width: 100%;
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    display: flex;
+.swiper-pagination-bullet-active {
+    background: #008B45 !important;
 }
 
-/* --- RESPONSIVIDADE MEDIA QUERIES --- */
-
-/* Celulares (< 768px) */
-@media (max-width: 768px) {
-    .pt-32 { padding-top: 6rem; }
-    h1 { font-size: 2.2rem !important; }
-    
-    #avisos .grid { gap: 1rem; }
-    
-    /* Modal ocupa tela toda no mobile */
-    #modalFiliacao .relative {
-        border-radius: 0;
-    }
-}
-
-/* Tablets (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .container { max-width: 90%; }
+/* FIX ALINHAMENTO MOBILE CARDS */
+.infoSwiper .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 /* FORMULÁRIO INJETADO */
-.label-clean { display: block; font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase; margin-bottom: 0.4rem; }
-.input-clean { 
-    width: 100% !important; 
-    padding: 0.8rem 1.1rem; 
-    background-color: #f8fafc; 
-    border: 2px solid #e2e8f0; 
-    border-radius: 1rem; 
-    font-size: 16px; /* Impede zoom no iOS */
-    outline: none; 
+.label-clean {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
 }
-.input-clean:focus { border-color: var(--verde-sobraef); background-color: #fff; }
+
+.input-clean {
+    width: 100% !important;
+    padding: 0.8rem 1rem;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-clean:focus {
+    border-color: var(--verde-sobraef);
+}
