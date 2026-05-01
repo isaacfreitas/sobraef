@@ -3,119 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SOBRAEF | Sociedade Brasileira de Atividade Física e Saúde</title>
-    <!-- Tailwind & Fonts -->
+    <title>SOBRAEF | Institucional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Swiper & AOS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Removido Swiper CSS para evitar conflitos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
 
-    <!-- HEADER RESPONSIVO -->
+    <!-- HEADER -->
     <header class="fixed w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
-        <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center gap-2">
-                <img src="form/assets/LOGO-SOBRAEF.png" alt="SOBRAEF" class="h-10 md:h-12 w-auto">
-                <div class="leading-none border-l pl-2 border-slate-200 hidden xs:block">
-                    <span class="block font-extrabold text-sm md:text-lg text-green-900 tracking-tighter uppercase">SOBRAEF</span>
-                </div>
+                <img src="form/assets/LOGO-SOBRAEF.png" alt="Logo" class="h-10 w-auto">
+                <span class="font-bold text-green-900 uppercase text-sm md:text-base">SOBRAEF</span>
             </a>
-            
-            <ul class="hidden lg:flex items-center gap-6 font-medium text-sm text-slate-600">
-                <li><a href="#inicio" class="hover:text-green-800 transition">Início</a></li>
-                <li><a href="#avisos" class="hover:text-green-800 transition">Transparência</a></li>
-                <li><a href="#filiacao" class="bg-green-800 text-white px-6 py-2 rounded-full hover:bg-green-900 transition">Área do Membro</a></li>
-            </ul>
-
-            <button id="mobileMenuBtn" class="lg:hidden p-2 text-2xl text-green-900">☰</button>
+            <button id="filiacaoBtn" class="bg-green-800 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg active:scale-95 transition">Área do Membro</button>
         </nav>
     </header>
 
-    <!-- HERO SECTION (ESTILO INSTITUCIONAL) -->
-    <section id="inicio" class="pt-24 md:pt-40 pb-12 px-4 bg-gradient-to-b from-green-50/50 to-white">
-        <div class="container mx-auto flex flex-col lg:flex-row items-center gap-8 md:gap-16">
-            <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-up">
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-slate-900">
-                    Excelência em <br class="hidden md:block"><span class="text-green-800">Saúde Pública</span>.
-                </h1>
-                <p class="text-slate-600 text-sm md:text-lg mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                    A Sociedade Brasileira de Atividade Física e Saúde atua na vanguarda da pesquisa e na formação de políticas para um Brasil mais ativo.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <a href="#filiacao" class="bg-green-800 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg hover:bg-green-900 transition text-center">Seja um Membro</a>
-                    <a href="#eventos" class="bg-white border border-slate-200 px-8 py-3.5 rounded-xl font-bold hover:bg-slate-50 transition text-center text-slate-700">Ver Comunicados</a>
-                </div>
+    <main class="w-full">
+        <!-- HERO -->
+        <section class="pt-32 pb-12 px-6 container mx-auto flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
+            <div class="lg:w-1/2" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Excelência em <br><span class="text-green-800">Saúde Pública</span>.</h1>
+                <p class="text-slate-600 text-lg mb-8">Sociedade Brasileira de Atividade Física e Saúde: Ciência aplicada em favor da vida.</p>
+                <a href="#filiacao" class="inline-block bg-green-800 text-white px-10 py-4 rounded-2xl font-bold shadow-xl">Seja um Membro</a>
             </div>
-            <div class="w-full lg:w-1/2" data-aos="zoom-in">
-                <div class="relative max-w-sm md:max-w-md mx-auto">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Atividade Física" class="rounded-[2rem] shadow-xl border-4 border-white w-full h-auto">
-                </div>
+            <div class="lg:w-1/2" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" class="rounded-[3rem] shadow-2xl border-8 border-white w-full h-auto">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- LINKS RÁPIDOS & AVISOS (GRID REVISADO) -->
-    <section id="avisos" class="py-8 md:py-12 container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-            
-            <!-- Coluna Links -->
-            <div class="w-full h-full flex flex-col">
-                <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl flex items-center gap-3">
-                    <h3 class="font-bold uppercase text-[10px] md:text-xs tracking-widest">Links de Acesso Rápido</h3>
+        <!-- CARROSSEL NATIVO CSS (AVISOS) -->
+        <section id="avisos" class="py-12 container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Links -->
+                <div class="lg:col-span-1">
+                    <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl font-bold text-[10px] uppercase tracking-widest">Links Rápidos</div>
+                    <div class="bg-white border border-slate-100 rounded-b-2xl shadow-sm overflow-hidden h-full">
+                        <ul class="divide-y divide-slate-50">
+                            <li class="p-4 flex justify-between font-semibold text-sm"><span>👤 Pessoa Física 2026</span> <span>➔</span></li>
+                            <li class="p-4 flex justify-between font-semibold text-sm"><span>🏢 Pessoa Jurídica 2026</span> <span>➔</span></li>
+                            <li class="p-4 flex justify-between font-semibold text-sm"><span>🔍 Pesquisa de Profissionais</span> <span>➔</span></li>
+                            <li class="p-4 flex justify-between font-semibold text-sm"><span>📝 Formulários Oficiais</span> <span>➔</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-white border border-slate-100 rounded-b-2xl shadow-sm flex-grow overflow-hidden">
-                    <ul class="divide-y divide-slate-50">
-                        <li class="p-4 hover:bg-slate-50 text-xs md:text-sm font-semibold text-slate-700 flex justify-between items-center cursor-pointer">
-                            <span>👤 Pessoa Física Anuidade 2026</span> <span class="text-slate-300">➔</span>
-                        </li>
-                        <li class="p-4 hover:bg-slate-50 text-xs md:text-sm font-semibold text-slate-700 flex justify-between items-center cursor-pointer">
-                            <span>🏢 Pessoa Jurídica Anuidade 2026</span> <span class="text-slate-300">➔</span>
-                        </li>
-                        <li class="p-4 hover:bg-slate-50 text-xs md:text-sm font-semibold text-slate-700 flex justify-between items-center cursor-pointer">
-                            <span>🔍 Pesquisa de Profissionais</span> <span class="text-slate-300">➔</span>
-                        </li>
-                        <li class="p-4 hover:bg-slate-50 text-xs md:text-sm font-semibold text-slate-700 flex justify-between items-center cursor-pointer">
-                            <span>📝 Formulários Oficiais</span> <span class="text-slate-300">➔</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Coluna Avisos (Carrossel Amarelo) -->
-            <div class="w-full lg:col-span-2 flex flex-col h-full">
-                <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl flex items-center gap-3">
-                    <h3 class="font-bold uppercase text-[10px] md:text-xs tracking-widest uppercase">Avisos Importantes</h3>
-                </div>
-                <div class="swiper mainSwiper rounded-b-2xl shadow-sm min-h-[320px] md:min-h-[400px]">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide bg-[#FFFF00] flex flex-col items-center justify-center p-6 md:p-12 text-center overflow-hidden">
-                            <h2 class="text-[#008B45] text-2xl md:text-5xl font-black italic uppercase leading-tight mb-8">
-                                Portal da Transparência <br> e Acesso à Informação
-                            </h2>
-                            <button class="bg-[#008B45] text-white px-8 py-3 rounded-lg font-bold text-sm md:text-lg flex items-center gap-3 shadow-lg">
-                                ACESSE O PORTAL 👆
-                            </button>
+                <!-- Carrossel Amarelo (Scroll Snap) -->
+                <div class="lg:col-span-2 flex flex-col">
+                    <div class="bg-[#2D5A61] text-white p-4 rounded-t-2xl font-bold text-[10px] uppercase tracking-widest">Avisos Importantes</div>
+                    <div class="carousel-container bg-[#FFFF00] rounded-b-2xl shadow-sm min-h-[300px] md:min-h-[400px]">
+                        <div class="carousel-track">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide flex flex-col items-center justify-center p-8 text-center">
+                                <h2 class="text-[#008B45] text-3xl md:text-5xl font-black italic uppercase leading-tight mb-8">Portal da Transparência</h2>
+                                <button class="bg-[#008B45] text-white px-8 py-4 rounded-xl font-bold shadow-lg">ACESSE O PORTAL 👆</button>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide bg-green-900 flex flex-col items-center justify-center p-8 text-white text-center">
+                                <h2 class="text-3xl font-bold mb-4 italic">Anuidade 2026</h2>
+                                <p class="mb-6 opacity-80">Acesse o portal e confira os novos descontos para filiados.</p>
+                                <button class="bg-white text-green-900 px-6 py-3 rounded-lg font-bold">Ver Tabela</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- MODAL (RESPONSIVO) -->
-    <div id="modalFiliacao" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+    <!-- MODAL -->
+    <div id="modalFiliacao" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-0 md:p-4">
         <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md"></div>
-        <div class="relative w-full max-w-5xl h-full md:h-auto md:max-h-[90vh] bg-white md:rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col">
-            <button id="closeModal" class="absolute top-4 right-4 z-50 bg-white shadow-lg w-10 h-10 rounded-full flex items-center justify-center font-bold">✕</button>
-            <div id="modalContent" class="overflow-y-auto flex-1 h-full scroll-smooth"></div>
+        <div class="relative w-full h-full md:h-auto md:max-w-5xl bg-white md:rounded-[3rem] overflow-hidden md:max-h-[92vh] flex flex-col">
+            <button id="closeModal" class="absolute top-4 right-4 z-50 bg-white/50 w-10 h-10 rounded-full font-bold">✕</button>
+            <div id="modalContent" class="overflow-y-auto flex-1 h-full"></div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/imask"></script>
     <script src="script.js"></script>

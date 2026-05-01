@@ -1,73 +1,67 @@
-/* --- VARIAVEIS E RESET --- */
+/* RESET & FONTS */
 :root {
     --verde-sobraef: #1B5E20;
     --verde-secundario: #2D5A61;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
+h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+/* --- CARROSSEL NATIVO (IMPOSSÍVEL DE SUMIR) --- */
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    display: flex;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.carousel-track {
+    display: flex;
     width: 100%;
 }
 
-/* --- BREAKPOINTS ESPECÍFICOS PARA MOBILE --- */
-
-/* 1. Telas pequenas (iPhone SE, etc - < 380px) */
-@media (max-width: 380px) {
-    h1 { font-size: 1.75rem !important; }
-    .mainSwiper h2 { font-size: 1.5rem !important; }
-    .mainSwiper { min-height: 300px !important; }
+.carousel-slide {
+    min-width: 100%;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    display: flex;
 }
 
-/* 2. Mobile Geral (380px a 768px) */
+/* --- RESPONSIVIDADE MEDIA QUERIES --- */
+
+/* Celulares (< 768px) */
 @media (max-width: 768px) {
-    .container { padding-left: 1rem; padding-right: 1rem; }
+    .pt-32 { padding-top: 6rem; }
+    h1 { font-size: 2.2rem !important; }
     
-    /* Garante que o Carrossel Amarelo não seja atropelado */
     #avisos .grid { gap: 1rem; }
     
-    /* Ajuste do Modal para tela cheia no mobile */
+    /* Modal ocupa tela toda no mobile */
     #modalFiliacao .relative {
-        border-radius: 0 !important;
-        height: 100% !important;
+        border-radius: 0;
     }
 }
 
-/* 3. Tablets e Desktop pequeno */
+/* Tablets (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .container { max-width: 90%; }
 }
 
-/* --- COMPONENTES --- */
-
-.swiper { width: 100%; height: 100%; }
-
-.swiper-pagination-bullet-active {
-    background: #008B45 !important;
-    width: 24px !important;
-    border-radius: 4px !important;
+/* FORMULÁRIO INJETADO */
+.label-clean { display: block; font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase; margin-bottom: 0.4rem; }
+.input-clean { 
+    width: 100% !important; 
+    padding: 0.8rem 1.1rem; 
+    background-color: #f8fafc; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 1rem; 
+    font-size: 16px; /* Impede zoom no iOS */
+    outline: none; 
 }
-
-/* Forçar o conteúdo do /form/index.html a ser flexível */
-#modalContent section { padding: 1.5rem !important; }
-#modalContent .grid-cols-2 {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-}
-
-@media (min-width: 768px) {
-    #modalContent .grid-cols-2 { grid-template-columns: 1fr 1fr !important; }
-}
-
-/* Estilização Premium dos Inputs */
-.input-clean {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 0.75rem;
-    background: #f8fafc;
-    font-size: 16px; /* Evita zoom forçado no iOS */
-    transition: all 0.2s;
-}
-
-.input-clean:focus { border-color: var(--verde-sobraef); background: #fff; }
+.input-clean:focus { border-color: var(--verde-sobraef); background-color: #fff; }
