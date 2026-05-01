@@ -1,119 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inicializar Animações AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+    AOS.init({ duration: 800, once: true });
 
-    // 2. Inicializar Carrossel Principal (Avisos)
-    const mainSwiper = new Swiper('.mainSwiper', {
+    // 1. Inicializar Swipers com Autoplay adaptativo
+    new Swiper('.mainSwiper', {
         loop: true,
-        speed: 800,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
+        autoplay: { delay: 4000 },
+        pagination: { el: '.swiper-pagination', clickable: true }
     });
 
-    // 3. Inicializar Carrossel de Informativos (Eventos)
-    const infoSwiper = new Swiper('.infoSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: false,
+    new Swiper('.infoSwiper', {
+        slidesPerView: 1.1, // Mostra um pedaço do próximo slide (peek) no mobile
+        spaceBetween: 15,
         breakpoints: {
-            640: { slidesPerView: 2 },
+            768: { slidesPerView: 2 },
             1024: { slidesPerView: 2.5 }
-        },
-        autoplay: {
-            delay: 4000,
         }
     });
 
-    // 4. Lógica de Modal e Carregamento do Formulário /form
+    // 2. Lógica do Modal Responsivo
     const modal = document.getElementById('modalFiliacao');
     const modalContent = document.getElementById('modalContent');
-    const closeModal = document.getElementById('closeModal');
     const triggers = document.querySelectorAll('a[href="#filiacao"]');
 
     const openFiliacao = async (e) => {
         if(e) e.preventDefault();
-        
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
         
-        // Placeholder de Loading
-        modalContent.innerHTML = `
-            <div class="flex flex-col items-center justify-center py-40">
-                <div class="animate-spin h-14 w-14 border-4 border-green-800 border-t-transparent rounded-full mb-6"></div>
-                <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">Carregando Formulário Oficial...</p>
-            </div>
-        `;
+        modalContent.innerHTML = `<div class="p-10 text-center"><div class="animate-spin h-8 w-8 border-4 border-green-800 border-t-transparent rounded-full mx-auto"></div></div>`;
 
         try {
             const response = await fetch('form/index.html');
             const html = await response.text();
-            
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
-            const formContainer = doc.getElementById('filiacao');
+            const content = doc.getElementById('filiacao');
 
-            if (formContainer) {
-                // Injeta o HTML da pasta /form
-                modalContent.innerHTML = formContainer.innerHTML;
+            if (content) {
+                modalContent.innerHTML = content.innerHTML;
                 
-                // Re-inicializa máscaras IMask no formulário injetado
-                const cpfInput = modalContent.querySelector('#cpf');
-                const telInput = modalContent.querySelector('#tel');
-                if(cpfInput) IMask(cpfInput, { mask: '000.000.000-00' });
-                if(telInput) IMask(telInput, { mask: '(00) 00000-0000' });
-
-                // Lógica de Envio
-                const form = modalContent.querySelector('form');
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const btn = form.querySelector('button');
-                    btn.innerText = "Enviando...";
-                    btn.disabled = true;
-                    
-                    setTimeout(() => {
-                        alert('✅ Solicitação de filiação enviada com sucesso! A SOBRAEF analisará seus dados.');
-                        closeFiliacao();
-                    }, 2000);
-                });
+                // Re-inicializa máscaras no formulário mobile
+                const cpf = modalContent.querySelector('#cpf');
+                const tel = modalContent.querySelector('#tel');
+                if(cpf) IMask(cpf, { mask: '000.000.000-00' });
+                if(tel) IMask(tel, { mask: '(00) 00000-0000' });
             }
-        } catch (error) {
-            modalContent.innerHTML = `<div class="p-20 text-center text-red-500 font-bold">Erro técnico ao carregar formulário. Verifique se o arquivo form/index.html existe.</div>`;
+        } catch (err) {
+            modalContent.innerHTML = '<p class="p-6 text-center text-red-500">Erro ao carregar formulário.</p>';
         }
     };
 
-    const closeFiliacao = () => {
+    triggers.forEach(t => t.addEventListener('click', openFiliacao));
+    
+    document.getElementById('closeModal').onclick = () => {
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     };
 
-    triggers.forEach(btn => btn.addEventListener('click', openFiliacao));
-    closeModal.addEventListener('click', closeFiliacao);
-
-    // Fechar ao clicar no fundo
-    modal.addEventListener('click', (e) => {
-        if(e.target === modal || e.target.classList.contains('absolute')) {
-            // Verifica se não clicou dentro do card branco
-            if(e.target.id === 'modalFiliacao') closeFiliacao();
-        }
-    });
-
-    // 5. Mudança de Estilo do Header no Scroll
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 80) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // 3. Menu Mobile Simples
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    menuBtn.onclick = () => {
+        const desktopMenu = document.querySelector('header ul');
+        desktopMenu.classList.toggle('hidden');
+        desktopMenu.classList.toggle('flex');
+        desktopMenu.classList.toggle('flex-col');
+        desktopMenu.classList.toggle('absolute');
+        desktopMenu.classList.toggle('top-16');
+        desktopMenu.classList.toggle('left-0');
+        desktopMenu.classList.toggle('w-full');
+        desktopMenu.classList.toggle('bg-white');
+        desktopMenu.classList.toggle('p-6');
+        desktopMenu.classList.toggle('shadow-xl');
+    };
 });

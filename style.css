@@ -1,4 +1,4 @@
-/* --- CONFIGURAÇÕES GLOBAIS --- */
+/* --- RESET E FLUIDEZ --- */
 :root {
     --verde-sobraef: #1B5E20;
     --verde-secundario: #2D5A61;
@@ -7,78 +7,80 @@
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Poppins', sans-serif;
+/* Ajuste de containers para nunca estourarem a largura */
+.container {
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto;
 }
 
-/* --- SWIPER CUSTOMIZATION --- */
-.swiper-pagination-bullet {
-    background: #fff !important;
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
-    transition: all 0.3s ease;
+/* --- CARROSSEL RESPONSIVO --- */
+.swiper {
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-pagination-bullet-active {
     background: #008B45 !important;
-    opacity: 1;
-    width: 30px;
-    border-radius: 5px;
+    width: 20px !important;
+    border-radius: 4px !important;
 }
 
-/* --- MODAL TRANSITIONS --- */
-#modalFiliacao:not(.hidden) {
-    animation: modalIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* --- MODAL MOBILE-FIRST --- */
+#modalContent {
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
-@keyframes modalIn {
-    from { opacity: 0; transform: scale(0.9) translateY(40px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
+/* Forçar o conteúdo injetado do /form a ser responsivo */
+#modalContent section, 
+#modalContent .container {
+    padding: 1rem !important;
+    width: 100% !important;
 }
 
-/* --- FIX DOS INPUTS DO FORMULÁRIO INJETADO --- */
+#modalContent form {
+    width: 100% !important;
+    display: block !important;
+}
+
+/* --- INPUTS REVISADOS --- */
 .label-clean {
-    display: block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #475569;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
 .input-clean {
     width: 100%;
-    padding: 0.85rem 1.25rem;
+    padding: 0.75rem 1rem;
     background-color: #f8fafc;
-    border: 2px solid #e2e8f0;
-    border-radius: 1rem;
-    font-size: 1rem;
-    color: #1e293b;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 16px; /* Evita zoom automático no iOS */
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
 }
 
 .input-clean:focus {
     border-color: var(--verde-sobraef);
     background-color: #fff;
-    box-shadow: 0 0 0 5px rgba(27, 94, 32, 0.1);
 }
 
-/* Grupo Local de Trabalho */
-.bg-gray-50 {
-    background-color: #f1f5f9 !important;
-    border: 2px dashed #cbd5e1 !important;
-    padding: 1.5rem !important;
-    border-radius: 1.5rem !important;
+/* Grid Mobile Fix */
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-/* --- UTILS --- */
-.scrolled {
-    padding: 0.75rem 0 !important;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+@media (min-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
