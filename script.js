@@ -1,29 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa Animações
+    // 1. Inicializar Animações
     AOS.init({ duration: 800, once: true });
 
-    // Swiper Principal (Avisos)
-    new Swiper('.mainSwiper', {
-        loop: true,
-        autoplay: { delay: 5000 },
-        pagination: { el: '.swiper-pagination', clickable: true }
-    });
+    // 2. FUNÇÃO DE SEGURANÇA PARA INICIALIZAR CARROSSEL
+    const initSwipers = () => {
+        const infoEl = document.querySelector('.infoSwiper');
+        
+        if (infoEl) {
+            new Swiper('.infoSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                centeredSlides: true,
+                loop: false, // Evita sumir com apenas um slide
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 2,
+                        centeredSlides: false
+                    }
+                },
+                observer: true,
+                observeParents: true,
+            });
+            console.log("Carrossel Informativo Inicializado");
+        }
+    };
 
-    // Swiper Informativos (Correção de Centralização)
-    new Swiper('.infoSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        centeredSlides: true, // Garante centralização no mobile
-        breakpoints: {
-            1024: {
-                slidesPerView: 2,
-                centeredSlides: false
-            }
-        },
-        autoplay: { delay: 4000 }
-    });
+    // Tenta inicializar imediatamente e após um pequeno delay para garantir
+    initSwipers();
+    setTimeout(initSwipers, 500);
 
-    // Lógica do Modal Responsivo
+    // 3. Lógica do Modal
     const modal = document.getElementById('modalFiliacao');
     const modalContent = document.getElementById('modalContent');
     const triggers = document.querySelectorAll('a[href="#filiacao"]');
@@ -35,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         modalContent.innerHTML = `<div class="p-20 text-center flex flex-col items-center">
             <div class="animate-spin h-10 w-10 border-4 border-green-800 border-t-transparent rounded-full mb-4"></div>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Carregando...</span>
+            <span class="text-xs font-bold text-gray-400">CARREGANDO...</span>
         </div>`;
 
         try {
@@ -47,15 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(content) {
                 modalContent.innerHTML = content.innerHTML;
-                
-                // Re-inicializa máscaras no formulário injetado
                 const cpf = modalContent.querySelector('#cpf');
                 const tel = modalContent.querySelector('#tel');
                 if(cpf) IMask(cpf, { mask: '000.000.000-00' });
                 if(tel) IMask(tel, { mask: '(00) 00000-0000' });
             }
         } catch (err) {
-            modalContent.innerHTML = '<p class="p-10 text-center text-red-500 font-bold">Erro ao carregar formulário.</p>';
+            modalContent.innerHTML = '<p class="p-10 text-center text-red-500">Erro ao carregar formulário.</p>';
         }
     };
 
